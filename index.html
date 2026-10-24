@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I am sorry - Tant Sama7</title>
+    <!-- استدعاء خط جوجل لمظهر أنيق -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <!-- ربط ملف الـ CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- خلفية الجسيمات والقلوب الخفيفة -->
+    <div class="stars-container"></div>
+
+    <div class="main-card">
+        <!-- إضاءة خلفية دائرية (Glow effect) -->
+        <div class="glow-bg"></div>
+
+        <!-- 3D Heart Wrapper -->
+        <div class="heart-box">
+            <div class="heart-3d">
+                <div class="heart-text-inside">❤️</div>
+            </div>
+        </div>
+
+        <!-- النصوص الرئيسية -->
+        <h1 class="main-title">I am Sorry</h1>
+        <h2 class="sub-title">Tant Sama7</h2>
+
+        <p class="apology-text">
+            بعتذر جداً لحضرتك، وأتمنى تقبلي اعتذاري وتسامحيني 🙏✨..بس اني ابعد عن كريمان بجد حاجه صعبه ليا ..فانا  علشان ما ازعلش حضرتك  كريمان كلامي معاها هيبقي كاصدقاء وكمان مش هكلمها من بعد 11
+        </p>
+
+        <!-- زر تفاعلي للأسف -->
+        <button class="sorry-btn" onclick="createHeartBurst(event)">
+            <span>سامحيني يا طنط 🥺</span>
+        </button>
+    </div>
+
+    <!-- كود بسيط لتوليد تأثير متساقط عند الضغط على الزر -->
+    <script>
+        function createHeartBurst(e) {
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('floating-heart');
+                heart.innerHTML = '💖';
+                heart.style.left = (e.clientX + (Math.random() * 100 - 50)) + 'px';
+                heart.style.top = (e.clientY + (Math.random() * 100 - 50)) + 'px';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 1500);
+            }
+        }
+    </script>
+</body>
+</html>
